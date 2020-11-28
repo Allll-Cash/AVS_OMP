@@ -7,7 +7,6 @@
 using namespace std;
 
 vector<int> A, B;
-list<int> C;
 int del = 1;
 
 /// <summary>
@@ -27,19 +26,17 @@ int Nod(int one, int two, int three) {
 }
 
 int main() {
-
-    int n;
-    cin >> n;
-
+    int threadsCount;
+    int n = 1000 + rand();
+    cin >> threadsCount;
 
     //Заполнение массивов
     for (size_t i = 0; i < n; i++) {
 
-        A.push_back(1 + rand() % 10000);
-        B.push_back(1 + rand() % 10000);
+        A.push_back(1 + rand() % 1000000);
+        B.push_back(1 + rand() % 1000000);
     }
 
-    //Создаем потоки
     vector<char> flag(n, 0);
 
 #pragma omp parallel for num_threads(threadsCount)
