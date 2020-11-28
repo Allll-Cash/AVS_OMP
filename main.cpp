@@ -42,7 +42,8 @@ int main() {
 #pragma omp parallel for num_threads(threadsCount)
     for (int i = 0; i < n; i++) {
         if (Nod(A[i], B[i], i) == 1)
-            flag[i] = i;
+            flag[i]=1;
+
     }
 
     //Выведем результат
